@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.typeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<title>로그인</title>
+</head>
+<body>
+<div>
+	
+	<h1>로그인을 해봅시다.!!</h1>
+	
+	<form th:action="@{/loginProcessing}" method="post">
+		<h2>로그인 폼</h2>
+		
+		<!-- 파라미터 error가 있는경우 IF 통과 -->
+		<div th:if="${param.error}">
+			잘못된 아이디나 암호입니다.
+		</div>
+		
+		<input type="text" name="username" placeholder="계정" required="required"/>
+		<input type="password" name="password" placeholder="암호" required="required"/>
+		<input type="submit" value="로그인"/>
+	</form>
+	
+</div>
+</body>
+</html>

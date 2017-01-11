@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mapper.AccountMapper">
+   <resultMap type="com.example.domain.Account" id="Account">
+      <result column="ac" property="ac"/>
+      <result column="pw" property="pw"/>
+      <result column="role" property="role"/>
+   </resultMap>
+      
+   <select id="findOneByAc" parameterType="String" resultMap="Account">
+      select * from users where ac = #{ac}
+   </select>
+   
+   <insert id="save" parameterType="com.example.domain.Account">
+   	 insert into users values (#{Account.ac}, #{Account.pw}, #{Account.role})
+   </insert>
+</mapper>

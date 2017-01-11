@@ -12,10 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-import de.codecentric.boot.admin.config.EnableAdminServer;
-
 @SpringBootApplication
-@EnableAdminServer
 @ComponentScan({ "com.example" })
 @MapperScan(value = { "com.example.mapper" })
 public class DemoApplication {
